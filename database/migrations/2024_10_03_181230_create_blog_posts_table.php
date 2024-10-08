@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
-            
+
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
 
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('excerpt')->nullable();
             $table->text('content_raw');
             $table->text('content_html');
-            
+
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();
 

@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\BlogPost;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsersTableSeeder::class,
-            BlogCategoriesTableSeeder::class,            
-        ]);        
-        
+            BlogCategoriesTableSeeder::class,
+        ]);
+
         BlogPost::factory(100)->create();
 
-      
     }
 }

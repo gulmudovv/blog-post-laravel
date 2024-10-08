@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Blog\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::group(['prefix' => 'blog'],function(){
+    Route::resource('posts', PostController::class)->names('blog.posts');
 });
