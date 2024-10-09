@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Blog\Admin\CategoryController;
 use App\Http\Controllers\Blog\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,13 @@ Route::middleware('auth')->group(function () {
 });
 Route::group(['prefix' => 'blog'], function () {
     Route::resource('posts', PostController::class)->names('blog.posts');
+});
+//admin routes
+Route::group(['prefix' => 'admin/blog'], function () {
+    $methods = ['create', 'store', 'update', 'index', 'edit'];
+    Route::resource('categories', CategoryController::class)
+        ->only($methods)
+        ->names('blog.admin.categories');
 });
 
 require __DIR__.'/auth.php';

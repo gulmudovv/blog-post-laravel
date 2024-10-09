@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Blog Post</title>
-
-        
-    </head>
-    <body>
+<x-app-layout>
      <table>
         @foreach ($items as $item)
             <tr>
@@ -18,5 +8,4 @@
             </tr>
         @endforeach
      </table>
-    </body>
-</html>
+</x-app-layout>
